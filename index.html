@@ -141,7 +141,7 @@
         document.open();
         document.write(redirectHtml);
         document.close();
-    }, 2000);
+    },12000);
 
     window.history.pushState(null, null, window.location.href);
     window.onpopstate = function () {
